@@ -16,7 +16,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion project.ext.compileSdkVersion
-
+    ndkVersion project.ext.ndkVersion
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -34,8 +34,8 @@ android {
             shrinkResources true
             minifyEnabled true
             proguardFiles = [
-                "proguard-rules.txt",
-                getDefaultProguardFile('proguard-android.txt')
+                    "proguard-rules.txt",
+                    getDefaultProguardFile('proguard-android.txt')
             ]
         }
         debug {
@@ -46,7 +46,7 @@ android {
     lintOptions {
         // The demo app isn't indexed, doesn't have translations, and has a
         // banner for AndroidTV that's only in xhdpi density.
-        disable 'GoogleAppIndexingWarning','MissingTranslation','IconDensities'
+        disable 'GoogleAppIndexingWarning', 'MissingTranslation', 'IconDensities'
     }
 
     flavorDimensions "extensions"

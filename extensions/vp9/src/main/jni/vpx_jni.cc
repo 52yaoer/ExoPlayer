@@ -97,7 +97,7 @@ static int convert_16_to_8_neon(const vpx_image_t* const img, jbyte* const data,
   // In units of uint16_t, so /2 from raw stride
   const int srcStride = img->stride[VPX_PLANE_Y] / 2;
   const int dstStride = img->stride[VPX_PLANE_Y];
-vpx_to_rgba(img);
+//vpx_to_rgba(img);
   for (int y = 0; y < img->d_h; y++) {
     const uint16_t* src = srcBase;
     uint8_t* dst = dstBase;
@@ -836,7 +836,7 @@ DECODER_FUNC(void, vpxReleaseFrame, jlong jContext, jobject jOutputBuffer) {
 
 DECODER_FUNC(jstring, vpxGetErrorMessage, jlong jContext) {
   JniCtx *const context = reinterpret_cast<JniCtx *>(jContext);
-  if(context->alpha_decoder->err!=VPX_CODEC_OK){
+  if (context->alpha_decoder->err != VPX_CODEC_OK) {
     return env->NewStringUTF(vpx_codec_error(context->alpha_decoder));
   }
   return env->NewStringUTF(vpx_codec_error(context->decoder));

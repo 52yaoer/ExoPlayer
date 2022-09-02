@@ -29,6 +29,7 @@ allprojects {
     }
     project.ext {
         exoplayerPublishEnabled = false
+        ndkVersion = "20.1.5948944"
     }
     if (it.hasProperty('externalBuildDir')) {
         if (!new File(externalBuildDir).isAbsolute()) {
