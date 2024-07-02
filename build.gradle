@@ -17,7 +17,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.1'
+        classpath 'com.android.tools.build:gradle:4.1.1'
         classpath 'com.novoda:bintray-release:0.9.1'
         classpath 'com.google.android.gms:strict-version-matcher-plugin:1.2.0'
     }
@@ -29,7 +29,7 @@ allprojects {
     }
     project.ext {
         exoplayerPublishEnabled = false
-        ndkVersion = "20.1.5948944"
+        ndkVersion = "21.1.6352462"
     }
     if (it.hasProperty('externalBuildDir')) {
         if (!new File(externalBuildDir).isAbsolute()) {
